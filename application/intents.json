@@ -1,0 +1,99 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["hi", "hallo","halo","pagi", "siang", "malam","selamat siang","selamat pagi","selamat malam","halo"],
+      "responses": [ "Hallo", "Hay!", "Hi", "Adakah yang bisa saya bantu?"]
+    },
+    {
+      "tag": "greeting2",
+      "patterns": ["assalamualaikum"],
+      "responses": ["Waalaikumsalam"]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye","Sampai jumpa","Dadah"],
+      "responses": [
+        "Terimakasih telah mengunjungi website ini",
+        "Sampai jumpa lagi...",
+        "Sampai jumpa, semoga harimu menyenangkan..."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["terimakasih", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "sama sama", "ucapkan bye jika tidak ada pertanyaan lain", "Senang bisa membantu"]
+    },
+    {
+      "tag": "cara",
+      "patterns": ["cara", "website", "cara menggunakan", "kegunaan"
+      ],
+      "responses": [
+        "cara untuk menggunakan website ini, anda bisa menuju ke menu home kemudian klik get picture, atau dengan menuju ke menu navigasi VRealtime",
+        "website ini dapat digunakan untuk mendeteksi empat ekspresi wajah antara lain ekspresi sedih, senang, netral, dan marah"
+      ]
+    },
+    {
+      "tag": "ekpresi",
+      "patterns": ["ekspresi", "deteksi"
+      ],
+      "responses": [
+        "website ini dapat digunakan untuk mendeteksi empat ekspresi wajah antara lain ekspresi sedih, senang, netral, dan marah"
+      ]
+    },
+    {
+      "tag": "pengguna",
+      "patterns": [
+        "Siapa yang menggunakan website ini ?",
+        "Apakah kita bisa mendeteksi ekspresi hewan ?",
+        "Apa yang akan terjadi jika tidak ada manusia pada vidio atau gambar yang diupload ?"
+      ],
+      "responses": [
+        "Website ini nantinya akan digunakan oleh mahasiswa dan pada website ini hanya dapat digunakan oleh manusia saja, jadi website ini tidak dapat mendeteksi ekspresi hewan"
+      ]
+    },
+    {
+      "tag": "pembuat",
+      "patterns": ["pemilik", "milik", "pembuat","buat", "anggota"
+      ],
+      "responses": [
+        "Pembuat website ini adalah mahasiswa semester 5 Politeknik Harapan Bersama",
+        "website ini dibuat oleh kelompok 4 dengan anggotanya\n 1. Helina Putri\n 2. Nirla Wahidatus Salam\n 3. Sri Mulia Ningsih\n 4. Aulia Rizqisyarifa"
+      ]
+    },
+    
+    {
+      "tag": "mahasiswa1",
+      "patterns": ["helina", "putri"
+      ],
+      "responses": [
+        "Helina Putri adalah mahasiswa semester 5 Prodi Sarjana Terapan Teknik Informatika Politrknik Harapan Bersama"
+      ]
+    },
+    {
+      "tag": "mahasiswa2",
+      "patterns": ["nirla"
+      ],
+      "responses": [
+        "Nirla Wahidatus Salam adalah mahasiswa semester 5 Prodi Sarjana Terapan Teknik Informatika Politrknik Harapan Bersama"
+      ]
+    },
+    {
+      "tag": "mahasiswa3",
+      "patterns": ["aulia"
+      ],
+      "responses": [
+        "Aulia Rizqisyarifa adalah mahasiswa semester 5 Prodi Sarjana Terapan Teknik Informatika Politrknik Harapan Bersama"
+      ]
+    },
+    {
+      "tag": "mahasiswa4",
+      "patterns": [ "sri"
+      ],
+      "responses": [
+        "Sri Mulia Ningsih adalah mahasiswa semester 5 Prodi Sarjana Terapan Teknik Informatika Politrknik Harapan Bersama"
+      ]
+    }
+    
+  ]
+}

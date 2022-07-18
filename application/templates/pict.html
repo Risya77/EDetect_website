@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/css/style.css" rel="stylesheet">
+
+<body>
+
+    {% include "includes/navadmin.html" %}
+    <br><br><br><br><br><br><br><br>
+
+
+<p><h1 align="center">Upload data ekspresi mahasiswa</h1></p>
+<div class="container">
+<div class="row">
+
+    <p>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </p>
+    {% if filename %}
+        <div>
+            <img src= "{{ url_for('pdetect', filename=filename) }}">
+           
+        </div>
+    {% endif %} 
+    <form method="post" action="/pdetec" enctype="multipart/form-data">
+        <dl>
+            <div class="form-group">
+                <label>Foto:</label>
+                <input type="file" name="file" class="form-control" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+              <label>Semester:</label>
+              <input type="number" min = "1" max="8" required class="form-control" name="semester" >
+            </div>
+            <div class="form-group">
+              <label>MK:</label>
+              <input type="text" required class="form-control" name="mk" >
+            </div>
+            <p>
+              <input type="submit" value="hasil" class="btn btn-info">
+            </p>
+        </dl>
+        
+    </form>
+    <form>
+      
+    </form>
+</div>
+</div>
+{% include "includes/footer.html" %}  
+</body>
+</html>

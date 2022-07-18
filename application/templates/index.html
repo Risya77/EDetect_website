@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Baker - v4.7.0
+  * Template URL: https://bootstrapmade.com/baker-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-transparent">
+    <div class="container d-flex align-items-center justify-content-between">
+      <img src="logo.png" alt="">
+      <h1 class="logo"><a href="index.html">Politeknik Harapan Bersama</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <ul>
+            {% if session.username %}
+          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#cta">VRealtime</a></li>
+          <li><a class="nav-link scrollto" href="#profil">Profil</a></li>
+          <li><a class="nav-link scrollto " href="#chatbot">ChatBoot</a></li>
+          <li><a class="nav-link scrollto " href="{{ url_for('logout') }}">Logout</a></li>
+          <li><a class="nav-link scrollto " href="{{ url_for('indexAdmin') }}">Admin</a></li>
+          {% else %}
+          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#cta">VRealtime</a></li>
+          <li><a class="nav-link scrollto" href="#profil">Profil</a></li>
+          <li><a class="nav-link scrollto " href="#chatbot">ChatBoot</a></li>
+          
+          {% endif %}
+        </ul>
+          </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container position-relative">
+      {% if session.username %}
+      <h1>Selamat Datang</h1>
+      <h2>Deteksi Ekspresi Wajah</h2>
+      <a href="{{ url_for('pict') }}" class="btn-get-started scrollto">Get Picture</a>
+      {% else %}
+      <h1>Selamat Datang </h1>
+      <h2>Deteksi Ekspresi Wajah</h2>
+      <h2>Silahkan Login Untuk menggunakan Fitur Ini</h2>
+      <a href="{{ url_for('login') }}" class="btn-get-started scrollto">Login </a>
+      {% endif %}
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- 
+      ======= CHATBOT ======= -->
+    <section id="chatbot" class="cta">
+      <div class="container">
+
+        <div class="text-center">
+          <h3>Chatbot</h3>
+          <p>  Masih bingung dengan aplikasi ?</p>
+          <p>Tanyakan Pertanyaan Anda Melalui Chatbot</p>
+          <!-- <a class="cta-btn" href="{{ url_for('chatbot') }}">Chatbot</a> -->
+
+      </div>
+    </section><!-- End CHATBOT Section -->
+
+    <section id="cta" class="cta">
+      <div class="container">
+
+        <div class="text-center">
+          <h3>Video Realtime</h3>
+          <p> Mengambil gambar dengan cara video realtime</p>
+          <a class="cta-btn" href="{{ url_for('detection') }}">Open Camera</a>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+
+
+
+    <!-- ======= Profil Section ======= -->
+    <section id="profil" class="team section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Profil</h2>
+          <p>website ini di buat oleh mahasiswa Politeknik Harapan Bersama Tegal Untuk memenuhi nilai Big Project ( UAS )</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="../static/img/team/team-1.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Helina Putri</h4>
+                <span>Mahasiswa Semester 5</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="../static/img/team/team-2.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Aulia Rizqisyarifa</h4>
+                <span>Mahasiswa Semester 5</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="../static/img/team/team-3.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Nirla Wahidatus Salam</h4>
+                <span>Mahasiswa Semester 5</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="../static/img/team/team-4.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sri Mulia Ningsih</h4>
+                <span>Mahasiswa Semester 5</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Profil Section -->
+      
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Team 4</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/baker-free-onepage-bootstrap-theme/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+
+  <!----=== chatbot===-->
+  <div class="chatbox">
+    <div class="chatbox__support">
+        <div class="chatbox__header">
+            <div class="chatbox__image--header">
+                <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
+            </div>
+            <div class="chatbox__content--header">
+                <h4 class="chatbox__heading--header">Chat support</h4>
+                <p class="chatbox__description--header">Hi. Nama ku adalah PictBot. Adakah yang bisa saya bantu ?</p>
+            </div>
+        </div>
+        <div class="chatbox__messages">
+            <div></div>
+        </div>
+        <div class="chatbox__footer">
+            <input type="text" placeholder="Write a message...">
+            <button class="chatbox__send--footer send__button">Send</button>
+        </div>
+    </div>
+    <div class="chatbox__button">
+        <button><img src="../static/img/chatbox-icon.svg" /></button>
+    </div>
+</div>
+<script src="../static/js/app.js"></script>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/vendor/purecounter/purecounter.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/js/main.js"></script>
+
+</body>
+
+</html>

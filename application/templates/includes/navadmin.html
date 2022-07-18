@@ -1,0 +1,21 @@
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <img src="/static/img/logo.png" alt="" width="100px">
+      <h1 class="logo"><a href="index.html">Politeknik Harapan Bersama</a></h1>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <ul>
+          <li><a class="nav-link {% if index %} active {% endif %}" href="{{ url_for('index') }}">Home</a></li>
+          <li class="active"><a href="{{url_for('data')}}">Data Dosen</a></li>
+          <li><a href="{{url_for('userdata')}}">Data Admin</a></li>
+          <li><a href="{{url_for('hasildata')}}">Hasil Deteksi</a></li>
+          <li><a href="{{url_for('pict')}}">Upload Deteksi</a></li>
+        </ul>
+          </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
